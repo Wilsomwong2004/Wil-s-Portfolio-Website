@@ -11,7 +11,7 @@ const SkillsSection = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-800 relative">
+    <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 relative">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-40 h-40 rounded-full bg-purple-200 dark:bg-purple-900 opacity-20 blur-xl animate-pulse"></div>
         <div className="absolute bottom-1/4 right-1/4 w-60 h-60 rounded-full bg-blue-200 dark:bg-blue-900 opacity-20 blur-xl animate-pulse"></div>

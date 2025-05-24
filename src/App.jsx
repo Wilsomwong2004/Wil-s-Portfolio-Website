@@ -14,6 +14,7 @@ import ScrollToTopButton from "./components/common/scrollToTopButton";
 import HeroBackground from "./components/threejs/heroBackground";
 import CodingPersonModel from "./components/threejs/codingPersonModel";
 import StarBackground from "./components/common/starBackground";
+import ClickSpark from "./components/common/clickSpark";
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -45,6 +46,13 @@ function App() {
 
   return (
     <div className="relative bg-white dark:bg-gray-800">
+      <ClickSpark
+        sparkColor='#fff'
+        sparkSize={10}
+        sparkRadius={15}
+        sparkCount={8}
+        duration={400}
+      >
       <Navigation 
         activeSection={activeSection} 
         toggleMobileMenu={() => setMobileMenuOpen(!mobileMenuOpen)} 
@@ -88,6 +96,7 @@ function App() {
       </main>
       
       <ScrollToTopButton />
+      </ClickSpark>
     </div>
   );
 }

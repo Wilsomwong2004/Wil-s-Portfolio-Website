@@ -15,7 +15,7 @@ const EducationSection = () => {
   ];
 
   return (
-    <section id="education" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-800 relative">
+    <section id="education" className="py-20 px-4 sm:px-6 lg:px-8 relative">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/3 right-1/4 w-64 h-64 rounded-full bg-purple-200 dark:bg-purple-900 opacity-20 blur-xl"></div>
         <div className="absolute bottom-1/3 left-1/3 w-48 h-48 rounded-full bg-blue-200 dark:bg-blue-900 opacity-20 blur-xl"></div>

@@ -1,4 +1,6 @@
 import { Mail, Phone, MapPin } from 'lucide-react';
+import DecryptedText from '../common/decryptedText';
+import BlurText from '../common/blurText';
 
 const AboutSection = () => {
   return (
@@ -16,7 +18,7 @@ const AboutSection = () => {
             <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-full p-1.5 max-w-md mx-auto animate-spin-slow">
               <div className="bg-white dark:bg-gray-800 rounded-full p-4">
                 <img 
-                  src="/api/placeholder/500/500" 
+                  src="../../assets/profile.jpg" 
                   alt="About Me" 
                   className="rounded-full w-full h-auto"
                 />
@@ -29,15 +31,42 @@ const AboutSection = () => {
           
           <div className="md:w-1/2">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 transform transition-all duration-500 hover:text-purple-600">
-              Hello, I'm Wong Wei Sheng
+              <BlurText
+                text="Hello, I'm Wong Wei Sheng!"
+                delay={50}
+                animateBy="words"
+                direction="top"
+              />
             </h3>
             
             <p className="text-gray-600 dark:text-gray-300 mb-4">
-              I'm a passionate web developer and designer with over 5 years of experience creating modern, responsive web applications. My journey in web development started during college, and I've been in love with building beautiful digital experiences ever since.
+              <BlurText
+                text="I'm an aspiring web developer and designer, currently pursuing a diploma and preparing to transition to a degree program after my internship. My journey in web development began during my studies, and I've been passionate about creating engaging digital experiences ever since."
+                delay={50}
+                animateBy="words"
+                direction="top"
+                initialDelay={800}
+              />
             </p>
             
             <p className="text-gray-600 dark:text-gray-300 mb-6">
-              My approach combines clean, efficient code with thoughtful user experience design. I specialize in React and modern JavaScript frameworks, with a focus on creating intuitive interfaces that are both functional and visually appealing.
+              <BlurText
+                text="I'm dedicated to learning and growing, constantly improving my skills to combine clean, efficient code with thoughtful user experience design. I specialize in React and modern JavaScript frameworks, focusing on building intuitive, functional, and visually appealing interfaces."
+                delay={50}
+                animateBy="words"
+                direction="top"
+                initialDelay={1600}
+              />
+            </p>
+
+            <p className="text-gray-600 dark:text-gray-300 mb-6">
+              <BlurText
+                text="Beyond web development, I love exploring new technologies, from the latest hardware components to cutting-edge AI models. This curiosity drives me to stay updated and continuously expand my knowledge in the ever-evolving tech world. My journey is just getting started, and I'm excited to keep learning and creating!"
+                delay={50}
+                animateBy="words"
+                direction="top"
+                initialDelay={2400}
+              />
             </p>
             
             <div className="flex flex-wrap gap-4">
