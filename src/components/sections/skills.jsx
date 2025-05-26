@@ -11,13 +11,13 @@ const SkillsSection = () => {
     { name: "JavaScript", level: 85, color: "from-yellow-500 to-orange-500" },
     { name: "HTML/CSS", level: 95, color: "from-red-500 to-pink-500" },
     { name: "Tailwind CSS", level: 90, color: "from-teal-500 to-green-500" },
+    { name: "C/C++", level: 65, color: "from-green-600 to-emerald-600" },
+    { name: "Python", level: 75, color: "from-blue-600 to-purple-600" },
     { name: "UI/UX Design", level: 80, color: "from-purple-500 to-indigo-500" },
-    { name: "Node.js", level: 75, color: "from-green-600 to-emerald-600" },
-    { name: "TypeScript", level: 85, color: "from-blue-600 to-purple-600" },
     { name: "Git", level: 80, color: "from-gray-600 to-gray-800" },
   ];
 
-  const additionalSkills = ["Redux", "Next.js", "SASS", "Figma", "GraphQL", "Jest", "Webpack", "Docker"];
+  const additionalSkills = ["Figma", "Canva", "Docker"];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -97,7 +97,6 @@ const SkillsSection = () => {
 
   return (
     <section ref={ref} id="skills" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      {/* Animated Background Elements */}
       <motion.div 
         className="absolute inset-0 overflow-hidden"
         initial={{ opacity: 0 }}
@@ -131,7 +130,6 @@ const SkillsSection = () => {
           </h2>
         </div>
         
-        {/* Skills Grid */}
         <motion.div 
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={containerVariants}
@@ -147,7 +145,6 @@ const SkillsSection = () => {
               onHoverEnd={() => setHoveredSkill(null)}
               className="bg-white dark:bg-gray-700 rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer relative overflow-hidden"
             >
-              {/* Hover Effect Background */}
               <motion.div
                 className="absolute inset-0 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 opacity-0"
                 animate={{ opacity: hoveredSkill === index ? 1 : 0 }}

@@ -25,7 +25,7 @@ const Navigation = ({
     { id: "hero", label: "Home" },
     { id: "about", label: "About" },
     { id: "skills", label: "Skills" },
-    { id: "portfolio", label: "Portfolio" },
+    { id: "project", label: "Project" },
     { id: "education", label: "Education" },
     { id: "experience", label: "Experience" },
     { id: "contact", label: "Contact" },
@@ -99,7 +99,6 @@ const Navigation = ({
         <MobileMenu />
       </nav>
       
-      {/* Floating Dock Nav for Desktop - Moved to Top */}
       <div className="hidden md:block">
         <div className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50">
           <motion.div 

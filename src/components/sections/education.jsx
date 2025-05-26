@@ -53,11 +53,11 @@ const EducationSection = () => {
         </div>
         
         <div className="flex justify-center mt-8">
-          <div className="bg-white dark:bg-gray-700 rounded-full py-3 px-6 shadow-md">
+          {/* <div className="bg-white dark:bg-gray-700 rounded-full py-3 px-6 shadow-md">
             <span className="text-gray-600 dark:text-gray-300">
               Additional certifications in UI/UX Design and Web Accessibility
             </span>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

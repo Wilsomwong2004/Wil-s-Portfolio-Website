@@ -15,6 +15,7 @@ import HeroBackground from "./components/threejs/heroBackground";
 import CodingPersonModel from "./components/threejs/codingPersonModel";
 import StarBackground from "./components/common/starBackground";
 import ClickSpark from "./components/common/clickSpark";
+import Footer from "./components/layout/footer";
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -97,6 +98,8 @@ function App() {
       
       <ScrollToTopButton />
       </ClickSpark>
+
+      <Footer />
     </div>
   );
 }
