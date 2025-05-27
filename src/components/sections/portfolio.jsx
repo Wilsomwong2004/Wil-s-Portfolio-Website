@@ -14,7 +14,7 @@ const PortfolioSection = () => {
       tags: ["Pose Detection Workout", "Movenet", "Gemini API"],
       github: `https://github.com/${GITHUB_USERNAME}/mewfit`,
       live: "https://mewfit-demo.vercel.app",
-      image: "../../src/assets/github screenshot/Mewfit.jpeg"
+      image: "../../src/assets/screenshot/Mewfit.jpeg"
     },
     {
       title: "MyCar Website",
@@ -22,7 +22,7 @@ const PortfolioSection = () => {
       tags: ["E-hailing Website", "Maps API", "Maps Routing API"],
       github: `https://github.com/${GITHUB_USERNAME}/mycar-website`,
       live: "https://mycar-demo.vercel.app", 
-      image: "../../src/assets/github screenshot/MyCar.jpeg"
+      image: "../../src/assets/screenshot/MyCar.jpeg"
     },
     {
       title: "MeetForums",
@@ -30,7 +30,7 @@ const PortfolioSection = () => {
       tags: ["Forums", "Google Meet Extension", "Chrome Extension"],
       github: `https://github.com/${GITHUB_USERNAME}/meetforums`,
       live: "https://chrome.google.com/webstore/detail/meetforums",
-      image: "../../src/assets/github screenshot/Meetforums.jpeg"
+      image: "../../src/assets/screenshot/Meetforums.jpeg"
     },
     {
       title: "Retro Snake Game",
@@ -38,7 +38,7 @@ const PortfolioSection = () => {
       tags: ["Unity", "C++"],
       github: `https://github.com/${GITHUB_USERNAME}/retro-snake-game`,
       live: "https://snake-game-demo.itch.io",
-      image: "../../src/assets/github screenshot/Snake.jpeg"
+      image: "../../src/assets/screenshot/Snake.jpeg"
     },
   ];
 
