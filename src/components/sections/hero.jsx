@@ -57,7 +57,7 @@ const HeroSection = ({ scrollToSection, heroBackgroundRef, modelContainerRef }) 
 
       <div className="max-w-7xl mx-auto relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8 lg:gap-12 xl:gap-16 items-start lg:items-center">
-          <div className="text-center ml-5 max-[640px]:mt-30 lg:text-left order-2 lg:order-1 px-2 sm:px-4 lg:px-0 lg:pr-8 pt-8 lg:pt-0">
+          <div className="text-center ml-5 lg:ml-10 max-[640px]:mt-30 lg:text-left order-2 lg:order-1 px-2 sm:px-4 lg:px-0 lg:pr-8 pt-8 lg:pt-0">
             <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 animate-fadeIn leading-tight">
               Wilsom <span className="text-purple-600">Wong</span>
             </h1>
@@ -123,7 +123,7 @@ const HeroSection = ({ scrollToSection, heroBackgroundRef, modelContainerRef }) 
       </div>
 
       {/* Scroll indicator - hide on mobile */}
-      <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:hidden">
+      <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:hidden lg:block">
         <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
           <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse"></div>
         </div>
