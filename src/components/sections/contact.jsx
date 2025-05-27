@@ -1,6 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Mail, MapPin, Github, Linkedin, Instagram } from 'lucide-react';
 import * as THREE from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import characterModel from '../../assets/character.glb';
 
 const ContactSection = () => {
   const mountRef = useRef(null);
@@ -13,6 +15,18 @@ const ContactSection = () => {
   useEffect(() => {
     if (!mountRef.current) return;
 
+    if (
+      mountRef.current &&
+      rendererRef.current &&
+      rendererRef.current.domElement &&
+      mountRef.current.contains(rendererRef.current.domElement)
+    ) {
+      try {
+        mountRef.current.removeChild(rendererRef.current.domElement);
+      } catch (e) {
+      }
+    }
+
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0x1f2937);
     sceneRef.current = scene;
@@ -23,7 +37,7 @@ const ContactSection = () => {
       0.1,
       1000
     );
-    camera.position.set(0, 0, 5);
+    camera.position.set(0, 1, 3);
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
@@ -31,13 +45,13 @@ const ContactSection = () => {
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     rendererRef.current = renderer;
+
     mountRef.current.appendChild(renderer.domElement);
 
-    // Lighting setup
-    const ambientLight = new THREE.AmbientLight(0x404040, 0.6);
+    const ambientLight = new THREE.AmbientLight(0x404040, 3);
     scene.add(ambientLight);
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
     directionalLight.position.set(5, 5, 5);
     directionalLight.castShadow = true;
     scene.add(directionalLight);
@@ -50,88 +64,46 @@ const ContactSection = () => {
     pointLight2.position.set(3, -2, 3);
     scene.add(pointLight2);
 
-    // Load GLB Model
-    const loadGLBModel = async () => {
-      try {
-        // Create GLTFLoader using a different approach since the CDN import doesn't work
-        // We'll use a script tag approach instead
-        const script = document.createElement('script');
-        script.src = 'https://threejs.org/examples/js/loaders/GLTFLoader.js';
-        document.head.appendChild(script);
-        
-        script.onload = () => {
-          const loader = new THREE.GLTFLoader();
-        
-          loader.load(
-            '../../assets/character.glb', // Your GLB file path
-            (gltf) => {
-              const model = gltf.scene;
-              
-              // Adjust model scale and position
-              model.scale.set(1, 1, 1); // Adjust scale as needed
-              model.position.set(0, -1, 0); // Adjust position as needed
-              
-              // Enable shadows for the model
-              model.traverse((child) => {
-                if (child.isMesh) {
-                  child.castShadow = true;
-                  child.receiveShadow = true;
-                }
-              });
-              
-              scene.add(model);
-              modelRef.current = model;
-              setIsLoading(false);
-            },
-            (progress) => {
-              console.log('Loading progress:', (progress.loaded / progress.total * 100) + '%');
-            },
-            (error) => {
-              console.error('Error loading GLB model:', error);
-              setError('Failed to load 3D model');
-              setIsLoading(false);
-            }
-          );
-        };
-        
-        script.onerror = () => {
-          console.error('Failed to load GLTFLoader script');
-          setError('Failed to load 3D model loader');
-          setIsLoading(false);
-        };
-      } catch (err) {
-        console.error('Error setting up GLTFLoader:', err);
-        setError('Failed to load 3D model loader');
+    const loader = new GLTFLoader();
+    loader.load(
+      characterModel,
+      (gltf) => {
+        const model = gltf.scene;
+        model.scale.set(1, 1, 1);
+        model.position.set(0, -1, 0);
+        model.traverse((child) => {
+          if (child.isMesh) {
+            child.castShadow = true;
+            child.receiveShadow = true;
+          }
+        });
+        scene.add(model);
+        modelRef.current = model;
         setIsLoading(false);
+      },
+      undefined,
+      (error) => {
+        setError('Failed to load 3D model.');
+        setIsLoading(false);
+        console.error('Error loading GLB model:', error);
       }
-    };
+    );
 
-    loadGLBModel();
-
-    // Animation loop
     let animationId;
     const animate = () => {
       animationId = requestAnimationFrame(animate);
-      
       if (modelRef.current) {
-        // Slow rotation
         modelRef.current.rotation.y += 0.005;
-        
-        // Optional: floating animation
-        // modelRef.current.position.y = Math.sin(Date.now() * 0.001) * 0.2 - 1;
+        modelRef.current.position.y = Math.sin(Date.now() * 0.001) * 0.1;
       }
-      
       renderer.render(scene, camera);
     };
     animate();
 
-    // Handle resize
     const handleResize = () => {
       if (!mountRef.current || !renderer || !camera) return;
-      
       const width = mountRef.current.clientWidth;
       const height = mountRef.current.clientHeight;
-      
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
       renderer.setSize(width, height);
@@ -139,17 +111,20 @@ const ContactSection = () => {
 
     window.addEventListener('resize', handleResize);
 
-    // Cleanup
     return () => {
       window.removeEventListener('resize', handleResize);
-      if (animationId) {
-        cancelAnimationFrame(animationId);
-      }
-      if (mountRef.current && renderer.domElement) {
-        mountRef.current.removeChild(renderer.domElement);
-      }
-      if (renderer) {
-        renderer.dispose();
+      if (animationId) cancelAnimationFrame(animationId);
+      if (rendererRef.current) rendererRef.current.dispose();
+      if (
+        mountRef.current &&
+        rendererRef.current &&
+        rendererRef.current.domElement &&
+        mountRef.current.contains(rendererRef.current.domElement)
+      ) {
+        try {
+          mountRef.current.removeChild(rendererRef.current.domElement);
+        } catch (e) {
+        }
       }
     };
   }, []);
@@ -197,7 +172,7 @@ const ContactSection = () => {
                 </div>
               </div>
               
-              <div className="mt-10">
+              <div className="mt-50">
                 <div className="flex space-x-4">
                   <a href="https://github.com/Wilsomwong2004" className="w-10 h-10 rounded-full text-black bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition-all duration-300">
                     <Github size={20} />
@@ -213,10 +188,10 @@ const ContactSection = () => {
             </div>
 
             {/* 3D Model Side */}
-            <div className="relative bg-gray-800 dark:bg-gray-900 flex items-center justify-center">
-              <div 
-                ref={mountRef} 
-                className="w-full h-full min-h-[500px] relative"
+            <div className="bg-gray-800 dark:bg-gray-900 flex items-center justify-center">
+              <div
+                ref={mountRef}
+                className="relative w-full h-[400px] md:h-[500px] lg:h-[600px]"
                 style={{ background: 'linear-gradient(135deg, #1f2937 0%, #374151 100%)' }}
               >
                 {isLoading && (
@@ -227,24 +202,15 @@ const ContactSection = () => {
                     </div>
                   </div>
                 )}
-                
                 {error && (
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-red-400 text-center">
                       <p>{error}</p>
-                      <p className="text-sm mt-2">Check if character.glb file exists</p>
+                      <p className="text-sm mt-2">Using placeholder model</p>
                     </div>
                   </div>
                 )}
               </div>
-              
-              {/* Model Info Overlay */}
-              {!isLoading && !error && (
-                <div className="absolute bottom-4 left-4 bg-black bg-opacity-50 text-white px-3 py-2 rounded-lg text-sm">
-                  <p className="font-semibold">3D Character Model</p>
-                  <p className="text-xs opacity-75">Rotating automatically</p>
-                </div>
-              )}
             </div>
           </div>
         </div>

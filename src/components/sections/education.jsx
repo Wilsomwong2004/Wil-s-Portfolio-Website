@@ -4,13 +4,13 @@ const EducationSection = () => {
       degree: "Diploma of Information and Communication System (ICT)",
       institution: "Asia Pacific University (APU), Kuala Lumpur.",
       year: "2023-2025",
-      description: "Focused on Software Development and Database Systems",
+      description: "At Asia Pacific University (APU), I focused on software development, database systems, and IT applications, gaining expertise in programming languages such as PHP, Java and Python, as well as system analysis and design. As an active member of various project teams, I collaborated with peers to complete assignments and real-world projects, including inventory management systems and user interface development. These experiences enhanced my technical skills while strengthening my ability to communicate and work effectively in a team environment.",
     },
     {
       degree: "UEC Student",
       institution: "Pei Yuan High School, Kampar.",
       year: "2017-2022",
-      description: "Focused on Software Development and Database Systems",
+      description: "During my time at Pei Yuan High School, I pursued a well-rounded academic curriculum, including Mathematics, Physics, and Computer Science, which built a solid foundation for my future studies. I was an active member of St. John Ambulance, where I developed strong teamwork and communication skills through organizing and participating in group activities and events. These experiences not only enhanced my ability to work collaboratively but also helped me grow as a disciplined and proactive individual.",
     },
   ];
 
