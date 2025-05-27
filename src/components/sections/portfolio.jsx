@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Github, ExternalLink, Eye } from "lucide-react";
+import MewfitImg from '../../assets/screenshot/Mewfit.jpeg';
+import MyCarImg from '../../assets/screenshot/MyCar.jpeg';
+import MeetforumsImg from '../../assets/screenshot/Meetforums.jpeg';
+import SnakeImg from '../../assets/screenshot/Snake.jpeg';
 
 const PortfolioSection = () => {
   const [visibleCards, setVisibleCards] = useState(new Set());
@@ -14,7 +18,7 @@ const PortfolioSection = () => {
       tags: ["Pose Detection Workout", "Movenet", "Gemini API"],
       github: `https://github.com/${GITHUB_USERNAME}/mewfit`,
       live: "https://mewfit-demo.vercel.app",
-      image: "../../src/assets/screenshot/Mewfit.jpeg"
+      image: MewfitImg
     },
     {
       title: "MyCar Website",
@@ -22,7 +26,7 @@ const PortfolioSection = () => {
       tags: ["E-hailing Website", "Maps API", "Maps Routing API"],
       github: `https://github.com/${GITHUB_USERNAME}/mycar-website`,
       live: "https://mycar-demo.vercel.app", 
-      image: "../../src/assets/screenshot/MyCar.jpeg"
+      image: MyCarImg    
     },
     {
       title: "MeetForums",
@@ -30,7 +34,7 @@ const PortfolioSection = () => {
       tags: ["Forums", "Google Meet Extension", "Chrome Extension"],
       github: `https://github.com/${GITHUB_USERNAME}/meetforums`,
       live: "https://chrome.google.com/webstore/detail/meetforums",
-      image: "../../src/assets/screenshot/Meetforums.jpeg"
+      image: MeetforumsImg
     },
     {
       title: "Retro Snake Game",
@@ -38,7 +42,7 @@ const PortfolioSection = () => {
       tags: ["Unity", "C++"],
       github: `https://github.com/${GITHUB_USERNAME}/retro-snake-game`,
       live: "https://snake-game-demo.itch.io",
-      image: "../../src/assets/screenshot/Snake.jpeg"
+      image: SnakeImg
     },
   ];
 
