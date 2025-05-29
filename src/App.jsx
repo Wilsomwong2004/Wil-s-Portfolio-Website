@@ -16,6 +16,8 @@ import CodingPersonModel from "./components/threejs/codingPersonModel";
 import StarBackground from "./components/common/starBackground";
 import ClickSpark from "./components/common/clickSpark";
 import Footer from "./components/layout/footer";
+import PortfolioAssistant from "./components/common/chatbot";
+import { Routes } from "react-router-dom";
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -95,7 +97,8 @@ function App() {
           <ContactSection />
         </section>
       </main>
-      
+
+      <PortfolioAssistant />
       <ScrollToTopButton />
       </ClickSpark>
 

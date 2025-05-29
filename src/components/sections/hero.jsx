@@ -21,7 +21,7 @@ const HeroSection = ({ scrollToSection, heroBackgroundRef, modelContainerRef }) 
 
   const handleDownloadCV = () => {
     const link = document.createElement('a');
-    link.href = '/cv/WongWeiSheng_CV.zip';
+    link.href = 'https://wilsomwong2004.github.io/Wil-s-Portfolio-Website/cv/WongWeiSheng_CV.zip';
     link.download = 'WongWeiSheng_CV.zip';
     link.target = '_blank';
     document.body.appendChild(link);
