@@ -6,9 +6,9 @@ const ChangelogPopup = ({ isOpen, onClose }) => {
 
   const versionData = [
     {
-      version: 'v2.3.1',
+      version: 'v1.2.1',
       type: 'patch',
-      date: 'May 28, 2025',
+      date: 'May 29, 2025',
       description: 'Added AI-powered portfolio assistant using Google Gemini 1.5 API to enhance user interaction and provide intelligent responses about projects and skills.',
       changes: {
         features: [
@@ -21,7 +21,7 @@ const ChangelogPopup = ({ isOpen, onClose }) => {
       technologies: ['Google Gemini API', 'React', 'Tailwind CSS', 'JavaScript ES6']
     },
     {
-      version: 'v2.3.0',
+      version: 'v1.1.3',
       type: 'minor',
       date: 'May 15, 2025',
       description: 'Major UI/UX overhaul with modern design patterns, improved accessibility, and enhanced mobile experience.',
@@ -30,13 +30,12 @@ const ChangelogPopup = ({ isOpen, onClose }) => {
           'Redesigned navigation with smooth animations',
           'Improved color scheme with better contrast ratios',
           'Enhanced loading performance with lazy loading',
-          'Added dark mode toggle functionality'
         ]
       },
       technologies: ['CSS Grid', 'Intersection Observer', 'React Hooks', 'Tailwind CSS']
     },
     {
-      version: 'v2.2.1',
+      version: 'v1.1.2',
       type: 'hotfix',
       date: 'April 28, 2025',
       description: 'Critical bug fixes for mobile compatibility and form submission issues.',
@@ -50,22 +49,7 @@ const ChangelogPopup = ({ isOpen, onClose }) => {
       technologies: ['React', 'CSS Media Queries']
     },
     {
-      version: 'v2.2.0',
-      type: 'minor',
-      date: 'April 15, 2025',
-      description: 'Added project filtering system, enhanced animations, and improved SEO optimization.',
-      changes: {
-        features: [
-          'Interactive project filtering by technology',
-          'Added project preview modals with detailed information',
-          'Implemented smooth scroll animations',
-          'Enhanced SEO with structured data markup'
-        ]
-      },
-      technologies: ['React', 'Framer Motion', 'JSON-LD', 'React Router']
-    },
-    {
-      version: 'v2.1.0',
+      version: 'v1.0.0',
       type: 'minor',
       date: 'March 20, 2025',
       description: 'Enhanced portfolio sections with new projects, testimonials, and improved contact functionality.',
@@ -82,10 +66,10 @@ const ChangelogPopup = ({ isOpen, onClose }) => {
   ];
 
   const stats = {
-    currentVersion: '2.3.1',
-    totalUpdates: 15,
-    newFeatures: 8,
-    bugFixes: 12
+    currentVersion: '1.2.1',
+    totalUpdates: 4,
+    newFeatures: 2,
+    bugFixes: 8
   };
 
   const getTypeIcon = (type) => {
