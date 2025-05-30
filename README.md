@@ -1,7 +1,6 @@
-# Portfolio Website
-<div style="center">
-   ![Homepage Screenshot](src/assets/screenshot/homepage.jpeg)
-</div>
+# My Portfolio Website
+
+![Homepage Screenshot](src/assets/screenshot/homepage.jpeg)
 
 Welcome to my portfolio website! This project showcases my skills, experiences, and the work I've accomplished as a developer and designer.
 
@@ -96,18 +95,23 @@ To view my portfolio, navigate to the [live version](https://wilsomwong2004.gith
 Here are some screenshots showcasing the design and functionality of the website:
 
 1. **Homepage**:
+   
    ![Homepage Screenshot](src/assets/screenshot/homepage.jpeg)
 
 2. **About**:
+   
   ![About Screenshot](src/assets/screenshot/about.jpeg)
 
 3. **Skill**:
+   
    ![Skills Screenshot](src/assets/screenshot/skills.jpeg)
 
-5. **Project**:
+4. **Project**:
+   
    ![Project Screenshot](src/assets/screenshot/project.jpeg)
 
-6. **Contact**:
+5. **Contact**:
+    
    ![Contact Screenshot](src/assets/screenshot/contact.jpeg)
 
 ---
