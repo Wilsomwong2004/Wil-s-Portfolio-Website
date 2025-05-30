@@ -1,4 +1,7 @@
 # Portfolio Website
+<div style="center">
+   ![Homepage Screenshot](src/assets/screenshot/homepage.jpeg)
+</div>
 
 Welcome to my portfolio website! This project showcases my skills, experiences, and the work I've accomplished as a developer and designer.
 
@@ -105,7 +108,7 @@ Here are some screenshots showcasing the design and functionality of the website
    ![Project Screenshot](src/assets/screenshot/project.jpeg)
 
 6. **Contact**:
-   ![Contact Screenshot](src/assets/screenshot/contact.jepg)
+   ![Contact Screenshot](src/assets/screenshot/contact.jpeg)
 
 ---
 
