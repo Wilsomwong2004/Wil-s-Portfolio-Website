@@ -34,7 +34,6 @@ This portfolio website serves as a central hub for:
 * **Responsive Design**: Adapts seamlessly to different devices and screen sizes.
 * **Project Gallery**: Showcases my completed and ongoing projects.
 * **Interactive Resume**: A dynamic representation of my career and educational achievements.
-* **Dark Mode**: Supports both light and dark themes for better user experience.
 * **Contact Form**: Allows visitors to get in touch directly through the website.
 * **Chatbot Assistant**: Integrated with Gemini 1.5 Flash API for real-time assistance.
 * **Animations and Motion**: Enhanced user engagement with Framer Motion and ThreeJS animations.
