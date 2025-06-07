@@ -85,7 +85,7 @@ This portfolio website serves as a central hub for:
 
 ## Usage
 
-To view my portfolio, navigate to the [live version](https://wilsomwong2004.github.io/Wil-s-Portfolio-Website/) of the website (add a link to your hosted website). Feel free to explore the sections, learn about my work, and reach out via the contact form.
+To view my portfolio, navigate to the [live version](https://wilsomwong2004.github.io/Wil-s-Portfolio-Website/) of the website. Feel free to explore the sections, learn about my work, and reach out via the contact form.
 
 ---
 
